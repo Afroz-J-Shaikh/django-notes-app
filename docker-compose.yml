@@ -17,6 +17,7 @@ services:
       context: .
     image: django_app
     container_name: "django_cont"
+    command: sh -c "python manage.py migrate --noinput && gunicorn notesapp.wsgi --bind 0.0.0.0:8000"
     env_file:
       - .env
     networks:
