@@ -25,10 +25,11 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install mysqlclient
-
+RUN pip install gunicorn
 COPY . /app/backend
 COPY --from=builder /usr/local/lib/python3.9/site-packages/ /usr/local/lib/python3.9/site-packages/
+COPY --from=builder /usr/local/bin/ /usr/local/bin/
 
 EXPOSE 8000
 
-//CMD ["python", "/app/backend/manage.py", "runserver", "0.0.0.0:8000"]
+#CMD ["python", "/app/backend/manage.py", "runserver", "0.0.0.0:8000"]
