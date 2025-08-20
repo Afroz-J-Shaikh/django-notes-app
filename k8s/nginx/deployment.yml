@@ -23,7 +23,7 @@ spec:
         volumeMounts:
         - mountPath: /vat/www/html
           name: data
-        volumes:
-          -name: data
-          persistentVolumeClaim:
-            claimName: my-pvc
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: my-pvc
