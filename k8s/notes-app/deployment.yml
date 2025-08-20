@@ -12,11 +12,11 @@ spec:
       app: notes-app
   template:
     metadata:
-      labeles:
+      labels:
         app: notes-app
     spec:
       containers:
-        -name: notes-app-c
-         image: afroz25/notes-app:latest
+        - name: notes-app-c
+          image: afroz25/notes-app:latest
           ports:
           - containerPort: 80

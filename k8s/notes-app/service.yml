@@ -7,7 +7,7 @@ spec:
   selector:
     app: notes-app
   ports:
-    -protocol: TCP
-     port: 8000
-     targetPort: 8000
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
   type: ClusterIP
